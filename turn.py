@@ -33,9 +33,9 @@ def read_player_move(hand):
 
 def find_computer_move(hand):
 
-    sort_by_number = sorted(hand, key= lambda t: (t[0], t[1]))
+    sort_by_number = list(set(sorted(hand, key= lambda t: (t[0], t[1]))))
 
-    sort_by_color = sorted(hand, key= lambda t: (t[1], t[0]))
+    sort_by_color = list(set(sorted(hand, key= lambda t: (t[1], t[0]))))
     
     indexes = []
     original_indexes = []
@@ -60,7 +60,7 @@ def find_computer_move(hand):
 
 
     for i in range(len(sort_by_color) - 3):
-        if indexes:
+        if indexes and tiles[-1][0] < 13:
             if is_valid_set(tiles + [sort_by_color[i+2]]):
                 tiles.append(sort_by_color[i+2])
                 indexes.append(i+2)
