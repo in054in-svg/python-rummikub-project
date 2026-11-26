@@ -32,10 +32,12 @@ def read_player_move(hand):
         
 
 def find_computer_move(hand):
+    set_hand = set(hand)
+    set_hand = list(hand)
 
-    sort_by_number = list(set(sorted(hand, key= lambda t: (t[0], t[1]))))
+    sort_by_number = sorted(set_hand, key= lambda t: (t[0], t[1]))
 
-    sort_by_color = list(set(sorted(hand, key= lambda t: (t[1], t[0]))))
+    sort_by_color = sorted(set_hand, key= lambda t: (t[1], t[0]))
     
     indexes = []
     original_indexes = []

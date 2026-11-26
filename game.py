@@ -5,15 +5,15 @@ def play_game():
     pool = create_pool()
     table = []
 
-    player_hand = []
-    computer_hand = []
+    player_hand = [(1, 'R')]
+    computer_hand = [(1, 'R'), (2, 'R'), (3, 'R'), (4, 'R'), (5, 'R'), (6, 'R'), (7, 'R'), (8, 'R'), (9, 'R'), (10, 'R'), (11, 'R'), (12, 'R'), (13, 'R'), (14, 'R')]
     skip_counter = 0
     turn = 1
 
 
-    for i in range(9):
-        player_hand.append(pool.pop())
-        computer_hand.append(pool.pop())
+    # for i in range(9):
+    #     player_hand.append(pool.pop())
+    #     computer_hand.append(pool.pop())
 
     while skip_counter < 2:
         if table:
